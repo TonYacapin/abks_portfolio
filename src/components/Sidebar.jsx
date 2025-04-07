@@ -11,6 +11,7 @@ import {
     FaTimes
 } from "react-icons/fa";
 
+
 export default function Sidebar({ activeSection, setActiveSection }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
