@@ -14,7 +14,7 @@ export default function AboutSection() {
       <div className="flex flex-col md:flex-row items-start justify-between gap-8 flex-grow">
         <div className="w-full md:w-2/5 flex flex-col items-center">
           <img
-            src="src/assets/image.png"
+            src="/images/image.png"
             alt="Angel Hamelton Yacapin"
             className="rounded-lg shadow-xl object-cover border-4 border-[#161B22] hover:shadow-2xl transition-all duration-300 w-4/5 md:w-full"
           />
