@@ -1,144 +1,146 @@
-import { useState } from "react";
+import { useState } from "react"
 import {
-    FaEnvelope,
-    FaGithub,
-    FaLinkedin,
-    FaUser,
-    FaCode,
-    FaFolderOpen,
-    FaCommentDots,
-    FaBars,
-    FaTimes
-} from "react-icons/fa";
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaUser,
+  FaCode,
+  FaFolderOpen,
+  FaCommentDots,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa"
 
+export default function Sidebar({ activeSection, setActiveSection, sectionRefs }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-export default function Sidebar({ activeSection, setActiveSection }) {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+  const handleNavClick = (section) => {
+    // Update active section
+    setActiveSection(section)
 
-    const handleNavClick = (section) => {
-        setActiveSection(section);
-        setIsMobileMenuOpen(false); // Close menu after selection on mobile
-    };
+    // Scroll to the section
+    const sectionRef = sectionRefs[section]
+    if (sectionRef && sectionRef.current) {
+      window.scrollTo({
+        top: sectionRef.current.offsetTop - 80, // Offset for header
+        behavior: "smooth",
+      })
+    }
 
-    const sidebarContent = (
-        <>
-            <div className="p-3 text-center border-b border-[#222222]">
-                <h1 className="text-xl font-bold text-white">ABKS</h1>
-                <p className="text-xs text-white">Software Developer</p>
-            </div>
-            <nav className="flex-1 p-3">
-                <ul className="space-y-1">
-                    <li>
-                        <button
-                            className={`block w-full text-left px-2 py-1 rounded hover:bg-[#222222] font-medium text-[#333333] ${activeSection === "about" ? "bg-[#222222]" : ""
-                                }`}
-                            onClick={() => handleNavClick("about")}
-                        >
-                            <FaUser className="inline-block mr-2" />
-                            <span className="align-middle">About Me</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            className={`block w-full text-left px-2 py-1 rounded hover:bg-[#222222] font-medium text-[#333333] ${activeSection === "skills" ? "bg-[#222222]" : ""
-                                }`}
-                            onClick={() => handleNavClick("skills")}
-                        >
-                            <FaCode className="inline-block mr-2" />
-                            <span className="align-middle">Skills</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            className={`block w-full text-left px-2 py-1 rounded hover:bg-[#222222] font-medium text-[#333333] ${activeSection === "projects" ? "bg-[#222222]" : ""
-                                }`}
-                            onClick={() => handleNavClick("projects")}
-                        >
-                            <FaFolderOpen className="inline-block mr-2" />
-                            <span className="align-middle">Projects</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            className={`block w-full text-left px-2 py-1 rounded hover:bg-[#222222] font-medium text-[#333333] ${activeSection === "contact" ? "bg-[#222222]" : ""
-                                }`}
-                            onClick={() => handleNavClick("contact")}
-                        >
-                            <FaCommentDots className="inline-block mr-2" />
-                            <span className="align-middle">Contact</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-            <footer className="p-3 text-center border-t border-[#222222]">
-                <div className="flex justify-center space-x-3">
-                    <a
-                        href="https://github.com/TonYacapin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#9c9c9c]"
-                    >
-                        <FaGithub className="h-4 w-4 text-white" />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/yacapin-angel-hamelton-o-2b8271304/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#9c9c9c]"
-                    >
-                        <FaLinkedin className="h-4 w-4 text-white" />
-                    </a>
-                    <a href="mailto:angelhameltonyacapin@example.com" className="hover:text-[#9c9c9c]">
-                        <FaEnvelope className="h-4 w-4 text-white" />
-                    </a>
-                </div>
-                <p className="mt-1 text-xs text-white">© 2025 Angel Hamelton O. Yacapin</p>
-            </footer>
-        </>
-    );
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false)
+  }
 
-    return (
-        <>
-            {/* Mobile menu button */}
-            <button
-                onClick={toggleMobileMenu}
-                className="md:hidden fixed top-4 left-4 z-20 bg-[#333333] text-white p-2 rounded-md shadow-md"
+  const navItems = [
+    { label: "About Me", icon: <FaUser />, section: "about" },
+    { label: "Skills", icon: <FaCode />, section: "skills" },
+    { label: "Projects", icon: <FaFolderOpen />, section: "projects" },
+    { label: "Contact", icon: <FaCommentDots />, section: "contact" },
+  ]
+  const socialLinks = [
+    { href: "https://github.com/TonYacapin", icon: <FaGithub color="white" />, label: "GitHub" },
+    { href: "https://www.linkedin.com/in/yacapin-angel-hamelton-o-2b8271304/", icon: <FaLinkedin color="white" />, label: "LinkedIn" },
+    { href: "mailto:angelhameltonyacapin@example.com", icon: <FaEnvelope color="white" />, label: "Email" },
+  ]
+
+  return (
+    <header className="bg-[#0F172A] text-[#F8FAFC] py-4 fixed top-0 left-0 w-full z-10 shadow-md border-b border-[#1E293B]">
+      <div className="container mx-auto flex items-center justify-between px-4">
+        <div className="flex items-center">
+          <h1 className="text-xl font-bold mr-4 text-[#3B82F6]">ABAKUS</h1>
+          <p className="text-xs text-[#F8FAFC]/80">Software Developer</p>
+        </div>
+
+        {/* Mobile menu toggle */}
+        <span
+          onClick={toggleMobileMenu}
+          className="md:hidden text-[#F8FAFC] p-2 cursor-pointer transition-colors"
+        >
+          {isMobileMenuOpen ? 
+            <FaTimes size={20} className="text-[#F8FAFC]" /> : 
+            <FaBars size={20} className="text-[#F8FAFC]" />
+          }
+        </span>
+        
+        {/* Desktop Nav */}
+        <nav className="hidden md:block">
+          <ul className="flex space-x-2">
+            {navItems.map(({ label, icon, section }) => (
+              <li key={section}>
+                <span
+                  onClick={() => handleNavClick(section)}
+                  className={`flex items-center px-4 py-2 font-medium cursor-pointer transition duration-300 
+                    ${activeSection === section ? "text-[#3B82F6]" : "text-[#F8FAFC] hover:text-[#3B82F6]"}`}
+                >
+                  <span className="mr-2">{icon}</span>
+                  <span>{label}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Desktop Social Links */}
+        <div className="hidden md:flex space-x-4">
+          {socialLinks.map(({ href, icon, label }, index) => (
+            <a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F8FAFC] hover:text-[#3B82F6] transition duration-300"
+              aria-label={label}
             >
-                {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-            </button>
+              {icon}
+            </a>
+          ))}
+        </div>
+      </div>
 
-            {/* Desktop sidebar */}
-            <aside className="fixed top-0 left-0 h-screen w-60 bg-[#333333] text-white flex flex-col z-10 hidden md:flex">
-                {sidebarContent}
-            </aside>
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#0F172A] border-t border-[#1E293B] z-20">
+          <div className="flex flex-col p-4">
+            <nav className="mb-4">
+              <ul className="space-y-2">
+                {navItems.map(({ label, icon, section }) => (
+                  <li key={section}>
+                    <span
+                      onClick={() => handleNavClick(section)}
+                      className={`flex w-full items-center px-4 py-2 font-medium transition duration-300 cursor-pointer
+                      ${activeSection === section ? "text-[#3B82F6]" : "text-[#F8FAFC] hover:text-[#3B82F6]"}`}
+                    >
+                      <span className="mr-2">{icon}</span>
+                      <span>{label}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-            {/* Mobile sidebar */}
-            {isMobileMenuOpen && (
-                <>
-                    {/* Backdrop - closes the menu when clicked */}
-                    <div
-                        className="fixed inset-0 bg-black/50 bg-opacity-50 z-20 md:hidden"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    />
+            <div className="flex justify-center space-x-6 pt-3 border-t border-[#1E293B]">
+              {socialLinks.map(({ href, icon, label }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F8FAFC] hover:text-[#3B82F6] transition duration-300"
+                  aria-label={label}
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
 
-                    {/* Mobile sidebar content */}
-                    <aside className="fixed top-0 left-0 h-screen w-60 bg-[#333333] text-white flex flex-col z-30 md:hidden">
-                        <div className="flex justify-end p-2">
-                            <button
-                                onClick={toggleMobileMenu}
-                                className="text-white hover:text-[#9c9c9c]"
-                            >
-                                <FaTimes size={20} />
-                            </button>
-                        </div>
-                        {sidebarContent}
-                    </aside>
-                </>
-            )}
-        </>
-    );
+            <p className="mt-4 text-xs text-center text-[#F8FAFC]/60">© 2025 Angel Hamelton O. Yacapin</p>
+          </div>
+        </div>
+      )}
+    </header>
+  )
 }

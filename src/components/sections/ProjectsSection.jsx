@@ -1,4 +1,4 @@
-import { FaFolderOpen, FaInfoCircle, FaGlobe, FaGithub } from "react-icons/fa"
+import { FaFolderOpen, FaInfoCircle, FaGlobe, FaGithub, FaCode, FaStar } from "react-icons/fa"
 import { useState } from "react"
 
 export default function ProjectsSection() {
@@ -21,12 +21,20 @@ export default function ProjectsSection() {
       codeUrl: "https://github.com/TonYacapin/abks_portfolio",
       tags: ["Javascript", "Tailwind"],
     },
+    {
+      id: 3,
+      title: "PAAW Application",
+      description: "A comprehensive web application with authentication and dynamic content.",
+      liveUrl: "https://paaw-eight.vercel.app/login",
+      codeUrl: "https://github.com/TonYacapin/PAAW",
+      tags: ["MongoDB", "Express", "React", "Node.js", "MERN"],
+    }
   ]
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md min-h-[calc(100vh-120px)] w-full flex flex-col">
-      <h2 className="text-xl font-bold mb-6 pb-2 border-b border-gray-200 flex items-center">
-        <FaFolderOpen className="mr-2 text-gray-700" />
+    <div className="bg-[#0D1117] p-6 rounded-lg shadow-lg min-h-[calc(100vh-120px)] w-full flex flex-col">
+      <h2 className="text-2xl font-bold mb-8 pb-3 border-b border-[#161B22] flex items-center text-[#C9D1D9]">
+        <FaFolderOpen className="mr-3 text-[#58A6FF]" />
         Projects
       </h2>
 
@@ -34,43 +42,49 @@ export default function ProjectsSection() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`border rounded-lg overflow-hidden transition-all duration-300 ${
-              hoveredProject === index ? "shadow-lg transform -translate-y-1" : "shadow"
-            }`}
+            className={`bg-[#161B22] border border-[#30363D] rounded-lg overflow-hidden transition-all duration-300 ${hoveredProject === index
+                ? "shadow-[0_0_15px_rgba(88,166,255,0.3)] transform -translate-y-1"
+                : "shadow-md"
+              }`}
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            <div className="h-3 bg-gradient-to-r from-gray-400 to-gray-700"></div>
-            <div className="p-5">
-              <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+            <div className="h-1 bg-gradient-to-r from-[#58A6FF] to-[#F85149]"></div>
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="font-semibold text-xl text-[#C9D1D9]">{project.title}</h3>
+                <FaStar className={`text-[#F85149] transition-opacity duration-300 ${hoveredProject === index ? 'opacity-100' : 'opacity-0'
+                  }`} />
+              </div>
+              <p className="text-[#8B949E] mb-4">{project.description}</p>
 
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                  <span key={tag} className="px-3 py-1 bg-[#0D1117] text-[#58A6FF] text-xs rounded-full flex items-center">
+                    <FaCode className="mr-1 text-[10px]" />
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="flex space-x-3">
+              <div className="flex space-x-4 mt-4">
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-sm text-gray-700 hover:text-black transition-colors"
+                  className="flex items-center text-sm text-[#C9D1D9] hover:text-[#58A6FF] transition-colors"
                 >
-                  <FaGlobe className="mr-1" />
-                  <span>View Live</span>
+                  <FaGlobe className="mr-2" color="white" />
+                  <span className="  text-gray-200">View Live</span>
                 </a>
                 <a
                   href={project.codeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors"
+                  className="flex items-center text-sm text-[#C9D1D9] hover:text-[#58A6FF] transition-colors"
                 >
-                  <FaGithub className="mr-1" />
-                  <span>View Code</span>
+                  <FaGithub className="mr-2" color="white" />
+                  <span className=" text-gray-200">View Code</span>
                 </a>
               </div>
             </div>
@@ -79,9 +93,9 @@ export default function ProjectsSection() {
       </div>
 
       {/* Note about additional projects */}
-      <div className="mt-auto p-4 bg-gray-50 border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-100">
-        <p className="flex items-center text-gray-700">
-          <FaInfoCircle className="mr-2 flex-shrink-0" />
+      <div className="mt-auto p-5 bg-[#161B22] border border-[#30363D] rounded-md transition-all duration-300 hover:bg-[#1A2028]">
+        <p className="flex items-center text-[#8B949E]">
+          <FaInfoCircle className="mr-3 flex-shrink-0 text-[#58A6FF]" />
           <span>
             Additional projects are currently being added to this portfolio. Please check back later for more examples
             of my work.
