@@ -1,81 +1,84 @@
+import React from "react";
 import { FaCode, FaServer, FaDatabase, FaTools, FaLaptopCode } from "react-icons/fa";
 import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiMongodb, SiExpress } from "react-icons/si";
 import { AiFillGithub } from "react-icons/ai";
 import { TbApi } from "react-icons/tb";
 
 export default function SkillsSection() {
-  const contentClasses = "bg-white p-6 rounded-lg shadow-md w-full flex flex-col";
-  const headingClasses = "text-xl font-bold mb-4 pb-2 border-b border-gray-200";
-  const textClasses = "text-gray-700";
-
   const skillCategories = [
     {
       name: "Frontend",
-      icon: <FaLaptopCode className="text-blue-500" />,
+      icon: <FaCode className="text-xl" />,
       skills: [
-        { name: "React.js", icon: <SiReact className="text-blue-600" /> },
-        { name: "JavaScript (ES6+)", icon: <SiJavascript className="text-yellow-400" /> },
-        { name: "TypeScript", icon: <SiTypescript className="text-blue-700" /> },
-        { name: "HTML5/CSS3", icon: <FaCode className="text-orange-500" /> },
-        { name: "Tailwind CSS", icon: <FaCode className="text-teal-500" /> },
+        { name: "React.js", icon: <SiReact /> },
+        { name: "JavaScript (ES6+)", icon: <SiJavascript /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "HTML5/CSS3", icon: <FaLaptopCode /> },
+        { name: "Tailwind CSS", icon: <FaCode /> },
       ]
     },
     {
       name: "Backend",
-      icon: <FaServer className="text-green-600" />,
+      icon: <FaServer className="text-xl" />,
       skills: [
-        { name: "Node.js", icon: <SiNodedotjs className="text-green-600" /> },
-        { name: "Express.js", icon: <SiExpress className="text-gray-600" /> },
-        { name: "RESTful APIs", icon: <TbApi className="text-purple-600" /> },
-        { name: "GraphQL", icon: <TbApi className="text-pink-600" /> },
+        { name: "Node.js", icon: <SiNodedotjs /> },
+        { name: "Express.js", icon: <SiExpress /> },
+        { name: "RESTful APIs", icon: <TbApi /> },
+        { name: "GraphQL", icon: <TbApi /> },
       ]
     },
     {
       name: "Database",
-      icon: <FaDatabase className="text-orange-500" />,
+      icon: <FaDatabase className="text-xl" />,
       skills: [
-        { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
-        { name: "Mongoose ODM", icon: <FaDatabase className="text-red-500" /> },
+        { name: "MongoDB", icon: <SiMongodb /> },
+        { name: "Mongoose ODM", icon: <FaDatabase /> },
       ]
     },
     {
       name: "Tools & Others",
-      icon: <FaTools className="text-gray-600" />,
+      icon: <FaTools className="text-xl" />,
       skills: [
-        { name: "Git & GitHub", icon: <AiFillGithub className="text-black" /> },
-        { name: "VS Code", icon: <FaCode className="text-blue-500" /> },
-        { name: "Agile/Scrum Methodology", icon: <FaTools className="text-purple-500" /> },
-        { name: "Responsive Design", icon: <FaLaptopCode className="text-indigo-500" /> },
+        { name: "Git & GitHub", icon: <AiFillGithub /> },
+        { name: "VS Code", icon: <FaLaptopCode /> },
+        { name: "Agile/Scrum Methodology", icon: <FaTools /> },
+        { name: "Responsive Design", icon: <FaLaptopCode /> },
       ]
     },
   ];
 
   return (
-    <div className={contentClasses}>
-      <h2 className={headingClasses}>
-        <FaCode className="inline-block mr-2" />
-        Skills
-      </h2>
-      <div className={textClasses}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <section className="py-16 bg-[#0D1117] text-[#C9D1D9]">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-12 text-center relative">
+          <span className="relative z-10">
+            Technical Skills
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#58A6FF] rounded-full"></span>
+          </span>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, index) => (
-            <div key={index} className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="text-lg font-medium mb-3 flex items-center">
-                {category.icon}
-                <span className="ml-2">{category.name}</span>
-              </h3>
-              <ul className="space-y-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="flex items-center">
-                    <span className="mr-2">{skill.icon}</span>
-                    {skill.name}
-                  </li>
-                ))}
-              </ul>
+            <div key={index} className="bg-[#161B22] rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(88,166,255,0.3)] border border-[#161B22] hover:border-[#58A6FF]">
+              <div className="px-6 py-4 border-b border-[#30363d] flex items-center gap-3">
+                <span className="text-[#58A6FF]">{category.icon}</span>
+                <h3 className="text-xl font-semibold">{category.name}</h3>
+              </div>
+              
+              <div className="p-4">
+                <ul className="space-y-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <li key={skillIndex} className="flex items-center gap-3 p-2 rounded-md hover:bg-[#1f2937] transition-colors duration-150">
+                      <span className="text-[#F85149]">{skill.icon}</span>
+                      <span>{skill.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
