@@ -23,7 +23,7 @@ export default function ProjectsSection() {
     },
     {
       id: 3,
-      title: "PAAW Application",
+      title: "Portable Assistant for Animal Welfare (PAAW)",
       description: "A comprehensive web application with authentication and dynamic content.",
       liveUrl: "https://paaw-eight.vercel.app/login",
       codeUrl: "https://github.com/TonYacapin/PAAW",
