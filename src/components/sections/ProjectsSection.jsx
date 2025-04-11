@@ -67,24 +67,24 @@ export default function ProjectsSection() {
                 ))}
               </div>
 
-              <div className="flex space-x-4 mt-4">
+              <div className="flex flex-col items-center space-y-4 mt-4">
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-sm text-[#C9D1D9] hover:text-[#58A6FF] transition-colors"
+                  className="flex items-center px-4 py-2 bg-[#58A6FF] text-sm text-[#C9D1D9] hover:bg-[#1A2028] hover:text-[#58A6FF] transition-colors rounded-md"
                 >
-                  <FaGlobe className="mr-2" color="white" />
-                  <span className="  text-gray-200">View Live</span>
+                  <FaGlobe className="mr-2" color="#C9D1D9" />
+                  <span className="text-[#C9D1D9]">View Live</span>
                 </a>
                 <a
                   href={project.codeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-sm text-[#C9D1D9] hover:text-[#58A6FF] transition-colors"
+                  className="flex items-center px-4 py-2 bg-[#58A6FF] text-sm text-[#C9D1D9] hover:bg-[#1A2028] hover:text-[#58A6FF] transition-colors rounded-md"
                 >
-                  <FaGithub className="mr-2" color="white" />
-                  <span className=" text-gray-200">View Code</span>
+                  <FaGithub className="mr-2" color="#C9D1D9" />
+                  <span className="text-[#C9D1D9]">View Code</span>
                 </a>
               </div>
             </div>
