@@ -51,9 +51,9 @@ export default function SkillsSection() {
     <section className="py-16 bg-[#0D1117] text-[#C9D1D9]">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center relative">
-          <span className="relative z-10">
+          <span className="relative">
             Technical Skills
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#58A6FF] rounded-full"></span>
+
           </span>
         </h2>
 
