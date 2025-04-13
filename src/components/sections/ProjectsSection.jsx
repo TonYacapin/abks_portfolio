@@ -28,6 +28,22 @@ export default function ProjectsSection() {
       liveUrl: "https://paaw-eight.vercel.app/login",
       codeUrl: "https://github.com/TonYacapin/PAAW",
       tags: ["MongoDB", "Express", "React", "Node.js", "MERN"],
+    },
+    {
+      id: 4,
+      title: "Applicant Tracking System",
+      description: "An HR application for tracking job applicants through the hiring process.",
+      liveUrl: "https://ats-hr.vercel.app/",
+      codeUrl: "https://github.com/jzaragosa06/ats-frontend",
+      tags: ["React", "Javascript", "HR", "Tracking"],
+    },
+    {
+      id: 5,
+      title: "Barbershop Income Tracker",
+      description: "A financial management tool for barbershops to track income and appointments.",
+      liveUrl: "https://ngelscut-barbershop.vercel.app/",
+      codeUrl: "https://github.com/TonYacapin/barbershop_income_tracker_frontend",
+      tags: ["MERN", "Javascript", "Financial", "Fullstack"],
     }
   ]
 
