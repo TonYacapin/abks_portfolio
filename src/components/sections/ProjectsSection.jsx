@@ -44,6 +44,13 @@ export default function ProjectsSection() {
       liveUrl: "https://ngelscut-barbershop.vercel.app/",
       codeUrl: "https://github.com/TonYacapin/barbershop_income_tracker_frontend",
       tags: ["MERN", "Javascript", "Financial", "Fullstack"],
+    },
+    {
+      id: 6,
+      title: "SPAZIO",
+      description: "A land posting mobile application featuring realtime chat, audit logs, and Google Maps integration.",
+      codeUrl: "https://github.com/TonYacapin/SPAZIOO",
+      tags: ["React Native", "Expo", "Mobile", "Google Maps", "Realtime Messaging"]
     }
   ]
 

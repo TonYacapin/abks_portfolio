@@ -1,4 +1,4 @@
-import { FaUser, FaLaptopCode, FaGraduationCap, FaCoffee } from "react-icons/fa";
+import { FaUser, FaLaptopCode, FaGraduationCap, FaCoffee, FaFileDownload } from "react-icons/fa";
 
 export default function AboutSection() {
   const contentClasses = "min-h-screen w-full flex flex-col p-6 md:p-10 bg-[#0D1117]";
@@ -18,6 +18,14 @@ export default function AboutSection() {
             alt="Angel Hamelton Yacapin"
             className="rounded-lg shadow-xl object-cover border-4 border-[#161B22] hover:shadow-2xl transition-all duration-300 w-4/5 md:w-full"
           />
+          
+          <a 
+            href="/CV YACAPIN (2).pdf" 
+            download 
+            className="mt-4 bg-[#58A6FF] hover:bg-[#4d8dd8] text-white font-medium py-2 px-4 rounded-lg shadow-md transition-all duration-300 flex items-center justify-center w-4/5 md:w-full"
+          >
+            <FaFileDownload className="mr-2" /> Download CV
+          </a>
 
           <div className="mt-6 w-full bg-[#161B22] p-4 rounded-lg shadow-sm">
             <h3 className="text-xl font-semibold mb-4 border-l-4 border-[#58A6FF] pl-3 text-[#C9D1D9]">Quick Facts</h3>
