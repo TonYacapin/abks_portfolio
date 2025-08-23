@@ -1,93 +1,156 @@
-import { FaUser, FaLaptopCode, FaGraduationCap, FaCoffee, FaFileDownload } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+  FaUser,
+  FaLaptopCode,
+  FaGraduationCap,
+  FaCoffee,
+  FaFileDownload,
+  FaUsers,
+  FaHeart,
+} from "react-icons/fa";
 
 export default function AboutSection() {
-  const contentClasses = "min-h-screen w-full flex flex-col p-6 md:p-10 bg-[#0D1117]";
-  const headingClasses = "text-2xl font-bold mb-8 pb-3 border-b border-[#161B22] flex items-center text-[#C9D1D9]";
-
   return (
-    <div className={contentClasses}>
-      <h2 className={headingClasses}>
-        <FaUser className="inline-block mr-3 text-[#58A6FF]" />
-        <span>About Me</span>
-      </h2>
+    <section className="min-h-screen w-full bg-[#0D1117] px-6 md:px-12 py-12 flex flex-col items-center">
+      {/* Header */}
+      <motion.h2
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl font-bold mb-12 text-[#C9D1D9] flex items-center"
+      >
+        <FaUser className="mr-3 text-[#EF4444]" /> About Me
+      </motion.h2>
 
-      <div className="flex flex-col md:flex-row items-start justify-between gap-8 flex-grow">
-        <div className="w-full md:w-2/5 flex flex-col items-center">
+      {/* Main layout */}
+      <div className="flex flex-col md:flex-row items-start gap-12 w-full max-w-6xl">
+        {/* Left - Profile */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="w-full md:w-1/3 flex flex-col items-center"
+        >
           <img
             src="/images/image.png"
             alt="Angel Hamelton Yacapin"
-            className="rounded-lg shadow-xl object-cover border-4 border-[#161B22] hover:shadow-2xl transition-all duration-300 w-4/5 md:w-full"
+            className="rounded-2xl shadow-2xl border-4 border-[#161B22] hover:scale-105 transition-transform duration-300 w-3/4 md:w-full"
           />
-          
-          <a 
-            href="/CV YACAPIN (2).pdf" 
-            download 
-            className="mt-4 bg-[#58A6FF] hover:bg-[#4d8dd8] text-white font-medium py-2 px-4 rounded-lg shadow-md transition-all duration-300 flex items-center justify-center w-4/5 md:w-full"
+
+          <motion.a
+            href="/CV YACAPIN (2).pdf"
+            download
+            whileHover={{ scale: 1.05 }}
+            className="mt-6 bg-gradient-to-r from-[#EF4444] to-[#B91C1C] text-white no-underline font-semibold py-3 px-6 rounded-xl shadow-lg transition-all flex items-center gap-2"
           >
-            <FaFileDownload className="mr-2" /> Download CV
-          </a>
+            <FaFileDownload /> Download CV
+          </motion.a>
 
-          <div className="mt-6 w-full bg-[#161B22] p-4 rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 border-l-4 border-[#58A6FF] pl-3 text-[#C9D1D9]">Quick Facts</h3>
-            <ul className="space-y-3 text-[#C9D1D9]">
-              <li className="flex items-start">
-                <FaLaptopCode className="mr-3 text-[#58A6FF] text-lg mt-1 flex-shrink-0" />
-                <span>4+ years of full-stack development experience</span>
-              </li>
-              <li className="flex items-start">
-                <FaGraduationCap className="mr-3 text-[#58A6FF] text-lg mt-1 flex-shrink-0" />
-                <span>Information Technology graduate from Saint Mary's University, Bayombong, Philippines</span>
-              </li>
-              <li className="flex items-start">
-                <FaCoffee className="mr-3 text-[#58A6FF] text-lg mt-1 flex-shrink-0" />
-                <span>Based in Solano, Nueva Vizcaya, Philippines</span>
-              </li>
-            </ul>
+          {/* Quick Facts */}
+          <div className="mt-8 grid gap-4 w-full">
+            {[
+              {
+                icon: <FaLaptopCode />,
+                text: "4+ years of full-stack development experience",
+              },
+              {
+                icon: <FaGraduationCap />,
+                text: "Information Technology graduate from Saint Mary's University",
+              },
+              { icon: <FaCoffee />, text: "Based in Solano, Nueva Vizcaya, Philippines" },
+            ].map((fact, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                className="flex items-start gap-3 bg-[#161B22] p-4 rounded-lg shadow-md text-[#C9D1D9]"
+              >
+                <span className="text-[#EF4444] text-xl">{fact.icon}</span>
+                <p>{fact.text}</p>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="w-full md:w-3/5 px-0 md:px-4">
-          <h3 className="text-xl font-semibold mb-4 text-[#C9D1D9]">Hi, I'm Angel Hamelton O. Yacapin</h3>
-
+        {/* Right - Info */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          className="w-full md:w-2/3"
+        >
+          <h3 className="text-2xl font-semibold mb-4 text-[#C9D1D9]">
+            Hi, I'm <span className="text-[#EF4444]">Angel Hamelton O. Yacapin</span>
+          </h3>
           <p className="text-lg leading-relaxed text-[#C9D1D9] mb-6">
-            I'm a software developer with a passion for building intuitive, high-performance applications that solve real-world problems.
-            Specializing in the MERN stack (MongoDB, Express, React, Node.js), I create seamless experiences
-            across both frontend and backend systems.
+            I'm a software developer with a passion for building intuitive, high-performance
+            applications. Specializing in the MERN stack, I create seamless solutions across
+            both frontend and backend systems.
+          </p>
+          <p className="text-lg leading-relaxed text-[#C9D1D9] mb-6">
+            I believe great software is more than just code — it’s about creating user-friendly
+            experiences that solve real problems and make people’s lives easier.
           </p>
 
-          <p className="text-lg leading-relaxed text-[#C9D1D9] mb-6">
-            My approach to development combines technical expertise with a strong focus on user experience.
-            I believe that great code should not only work flawlessly behind the scenes but also translate to
-            interfaces that users find engaging and easy to navigate.
-          </p>
-
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold mb-4 border-l-4 border-[#58A6FF] pl-3 text-[#C9D1D9]">What I Do</h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-[#161B22] p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h4 className="font-medium text-lg mb-2 text-[#58A6FF]">Frontend Development</h4>
-                <p className="text-[#C9D1D9]">Creating responsive UIs with React, TypeScript, and modern CSS frameworks.</p>
-              </div>
-
-              <div className="bg-[#161B22] p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h4 className="font-medium text-lg mb-2 text-[#58A6FF]">Backend Architecture</h4>
-                <p className="text-[#C9D1D9]">Building scalable APIs and services with Node.js, Express, and MongoDB.</p>
-              </div>
-
-              <div className="bg-[#161B22] p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h4 className="font-medium text-lg mb-2 text-[#58A6FF]">Database Design</h4>
-                <p className="text-[#C9D1D9]">Designing efficient data models with both SQL and NoSQL databases.</p>
-              </div>
-
-              <div className="bg-[#161B22] p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h4 className="font-medium text-lg mb-2 text-[#58A6FF]">DevOps Integration</h4>
-                <p className="text-[#C9D1D9]">Implementing CI/CD pipelines and containerization with Docker.</p>
-              </div>
+          {/* What I Do */}
+          <div className="mt-10">
+            <h3 className="text-xl font-semibold mb-6 text-[#C9D1D9] border-l-4 border-[#EF4444] pl-3">
+              What I Do
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Frontend Development",
+                  desc: "Responsive UIs with React, TypeScript, and TailwindCSS.",
+                },
+                {
+                  title: "Backend Architecture",
+                  desc: "Scalable APIs and services with Node.js & Express.",
+                },
+                {
+                  title: "Database Design",
+                  desc: "Efficient models in SQL & NoSQL (MongoDB).",
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="bg-[#161B22] p-5 rounded-lg shadow-md"
+                >
+                  <h4 className="text-[#EF4444] font-medium text-lg mb-2">{item.title}</h4>
+                  <p className="text-[#C9D1D9]">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </div>
+
+          {/* HR-Friendly Extra */}
+          <div className="mt-10">
+            <h3 className="text-xl font-semibold mb-6 text-[#C9D1D9] border-l-4 border-[#EF4444] pl-3">
+              Beyond Code
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-[#161B22] p-5 rounded-lg shadow-md flex items-start gap-3"
+              >
+                <FaUsers className="text-[#EF4444] text-xl mt-1" />
+                <p className="text-[#C9D1D9]">
+                  Team player who values collaboration and mentorship.
+                </p>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-[#161B22] p-5 rounded-lg shadow-md flex items-start gap-3"
+              >
+                <FaHeart className="text-[#EF4444] text-xl mt-1" />
+                <p className="text-[#C9D1D9]">
+                  Passionate about continuous learning & personal growth.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 }
