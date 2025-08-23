@@ -52,7 +52,7 @@ export default function ContactSection() {
           <div className="flex flex-col md:flex-row justify-center gap-6">
             <div className="mb-4 md:mb-0">
               <h4 className="font-medium text-[#C9D1D9] mb-1">Location</h4>
-              <p className="text-[#8B949E]">Baguio City, Benguet, Philippines</p>
+              <p className="text-[#8B949E]">Solano, Nueva Vizcaya, Philippines</p>
             </div>
 
             <div>
