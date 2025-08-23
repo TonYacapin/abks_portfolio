@@ -40,7 +40,7 @@ export default function AboutSection() {
               </li>
               <li className="flex items-start">
                 <FaCoffee className="mr-3 text-[#58A6FF] text-lg mt-1 flex-shrink-0" />
-                <span>Based in Baguio City, Benguet, Philippines</span>
+                <span>Based in Solano, Nueva Vizcaya, Philippines</span>
               </li>
             </ul>
           </div>
