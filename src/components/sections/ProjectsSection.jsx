@@ -12,7 +12,6 @@ import { useState } from "react";
 
 export default function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState(null);
-
   const projects = [
     {
       id: 1,
@@ -73,13 +72,7 @@ export default function ProjectsSection() {
       codeUrl: "https://github.com/TonYacapin/SPAZIOO",
       instaUrl:
         "https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTg5MDY4MTU1NjMwNzYy?story_media_id=3356975524537478502_65143603232&igsh=MThlZHZyZmkwdGo1eg=",
-      tags: [
-        "React Native",
-        "Expo",
-        "Mobile",
-        "Google Maps",
-        "Realtime Messaging",
-      ],
+      tags: ["React Native", "Expo", "Mobile", "Google Maps", "Realtime Messaging"],
       difficulty: 5,
     },
     {
@@ -92,15 +85,19 @@ export default function ProjectsSection() {
       tags: ["React", "Gamification", "Saving", "Fullstack"],
       difficulty: 5,
       additionalLinks: [
-        {
-          label: "Frontend Code",
-          url: "https://github.com/TonYacapin/savr_frontend",
-        },
-        {
-          label: "Backend Code",
-          url: "https://github.com/TonYacapin/savr_backend",
-        },
+        { label: "Frontend Code", url: "https://github.com/TonYacapin/savr_frontend" },
+        { label: "Backend Code", url: "https://github.com/TonYacapin/savr_backend" },
       ],
+    },
+    {
+      id: 8,
+      title: "Mindful - Mood Tracker",
+      description:
+        "Mindful is a web-based mental wellness platform that helps users track moods, reflect through journaling, It features daily mood check-ins, personal journals, data visualization for mood trends, and an intuitive, responsive interface for seamless user experience.",
+      liveUrl: "https://mindful-app-phi.vercel.app/",
+      codeUrl: "https://github.com/TonYacapin/Mindful-App",
+      tags: ["React", "Javascript", "Tailwind", "Fullstack", "Gamification"],
+      difficulty: 4,
     },
   ];
 
