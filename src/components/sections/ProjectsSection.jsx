@@ -48,7 +48,7 @@ export default function ProjectsSection() {
       title: "Applicant Tracking System",
       description:
         "Applicant Tracking System (ATS) is a web-based HR solution I worked on during my On-the-Job Training. I contributed as both a frontend and backend developer, building features that streamline the hiring process, track candidates efficiently, and improve collaboration for HR teams.",
-      liveUrl: "https://ats-hr.vercel.app/",
+      liveUrl: "https://ats.kriyahr.com/",
       codeUrl: "https://github.com/jzaragosa06/ats-frontend",
       tags: ["React", "Javascript", "HR", "Tracking"],
       difficulty: 4,
