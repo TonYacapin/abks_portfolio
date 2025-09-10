@@ -79,7 +79,7 @@ export default function AboutSection() {
           className="w-full md:w-2/3"
         >
           <h3 className="text-2xl font-semibold mb-4 text-[#C9D1D9]">
-            Hi, I'm <span className="text-[#EF4444]">Angel Hamelton O. Yacapin</span>
+            Hi, I'm <span className="text-[#EF4444]">Allen O. Feature</span>
           </h3>
           <p className="text-lg leading-relaxed text-[#C9D1D9] mb-6">
             I'm a software developer with a passion for building intuitive, high-performance
