@@ -41,7 +41,7 @@ export default function Sidebar({ activeSection, setActiveSection, sectionRefs }
 
   const socialLinks = [
     { href: "https://github.com/TonYacapin", icon: <FaGithub className="text-[#EF4444] hover:text-[#DC2626] transition-colors" />, label: "GitHub" },
-    { href: "https://www.linkedin.com/in/yacapin-angel-hamelton-o-2b8271304/", icon: <FaLinkedin className="text-[#EF4444] hover:text-[#DC2626] transition-colors" />, label: "LinkedIn" },
+    { href: "https://www.linkedin.com/in/angel-hamelton-yacapin-2b8271304/", icon: <FaLinkedin className="text-[#EF4444] hover:text-[#DC2626] transition-colors" />, label: "LinkedIn" },
     { href: "mailto:angelhameltonyacapin@example.com", icon: <FaEnvelope className="text-[#EF4444] hover:text-[#DC2626] transition-colors" />, label: "Email" },
   ]
   return (

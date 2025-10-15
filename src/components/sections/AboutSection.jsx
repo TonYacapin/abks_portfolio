@@ -51,13 +51,13 @@ export default function AboutSection() {
             {[
               {
                 icon: <FaLaptopCode />,
-                text: "4+ years of full-stack development experience",
+                text: "2+ years of full-stack development experience",
               },
               {
                 icon: <FaGraduationCap />,
                 text: "Information Technology graduate from Saint Mary's University",
               },
-              { icon: <FaCoffee />, text: "Based in Solano, Nueva Vizcaya, Philippines" },
+              { icon: <FaCoffee />, text: "Based in Baguio, Benguet, Philippines" },
             ].map((fact, i) => (
               <motion.div
                 key={i}
@@ -79,7 +79,7 @@ export default function AboutSection() {
           className="w-full md:w-2/3"
         >
           <h3 className="text-2xl font-semibold mb-4 text-[#C9D1D9]">
-            Hi, I'm <span className="text-[#EF4444]">Angel Hamelton O. Yacapin</span>
+            Hi, I'm <span className="text-[#EF4444]">Ton Yacapin</span>
           </h3>
           <p className="text-lg leading-relaxed text-[#C9D1D9] mb-6">
             I'm a software developer with a passion for building intuitive, high-performance
