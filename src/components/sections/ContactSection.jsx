@@ -81,7 +81,7 @@ export default function ContactSection() {
               text: "yacapinton@gmail.com",
             },
             {
-              href: "https://www.linkedin.com/in/yacapin-angel-hamelton-o-2b8271304/",
+              href: "https://www.linkedin.com/in/angel-hamelton-yacapin-2b8271304/",
               icon: <FaLinkedin />,
               label: "LinkedIn",
               text: "Professional Profile",
@@ -134,7 +134,7 @@ export default function ContactSection() {
               <div>
                 <h4 className="font-medium text-[#C9D1D9] mb-1">Location</h4>
                 <p className="text-[#8B949E]">
-                  Solano, Nueva Vizcaya, Philippines
+              Baguio City, Benguet, Philippines
                 </p>
               </div>
             </div>
